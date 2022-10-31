@@ -18,7 +18,7 @@ function generatePassword() {
   var numbers = "0123456789";
   var specialCharacters = "~`!@#$%^&*()_-+={[}]|;'<,>.?/";
 
-  if (length != null && isNumeric(length) == true) {
+  if (length != null && isNumeric(length)) {
     var specialCharsSelect = window.confirm("Would you like the password to contain special characters?");
     var capitalCharsSelect = window.confirm("Would you like the password to contain capitals?");
     var lowerCharsSelect = window.confirm("Would you like the password to contain lowerCase?");
