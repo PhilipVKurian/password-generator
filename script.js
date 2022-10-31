@@ -44,9 +44,12 @@ function generatePassword() {
       return generatedPassword;
     } else { 
       window.alert("At least one type must be selected");
+      passwordText.value = "";
       return;
     }
-  } 
+  } else {
+    passwordText.value = "";
+  }
 }
 //Validation method to check if input is a number or a letter
 function isNumeric(n){
