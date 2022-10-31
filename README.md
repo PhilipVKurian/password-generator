@@ -7,7 +7,7 @@ The project involves the implementaion of javascript to alow the user to generat
 N/A
 
 ## Features
-The script allows for the choce of a random password between 8 and 128 characters in length.
+The script allows for the choice of a random password between 8 and 128 characters in length.
 The user can also choose if they want special characters, lowercase, uppercase or numbers included.
 The results are displayed in the text box.
 
