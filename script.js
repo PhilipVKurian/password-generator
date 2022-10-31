@@ -5,7 +5,6 @@ var passwordField = document.querySelector("#password");
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-  console.log(password);
   passwordField.readOnly = false;
   passwordText.value = password;
 }
@@ -19,7 +18,7 @@ function generatePassword() {
   var numbers = "0123456789";
   var specialCharacters = "~`!@#$%^&*()_-+={[}]|;'<,>.?/";
 
-  if (isNumeric(length) == true) {
+  if (length != null && isNumeric(length) == true) {
     var specialCharsSelect = window.confirm("Would you like the password to contain special characters?");
     var capitalCharsSelect = window.confirm("Would you like the password to contain capitals?");
     var lowerCharsSelect = window.confirm("Would you like the password to contain lowerCase?");
@@ -27,16 +26,16 @@ function generatePassword() {
 
     if (specialCharsSelect || capitalCharsSelect || lowerCharsSelect || numericCharsSelect){
       if (specialCharsSelect){
-        placeholderPassword = placeholderPassword.concat(specialCharacters);
+        placeholderPassword += specialCharacters;
       }
       if(capitalCharsSelect){
-        placeholderPassword = placeholderPassword.concat(capitals);
+        placeholderPassword += capitals;
       }
       if(lowerCharsSelect){
-        placeholderPassword = placeholderPassword.concat(lowerCase);
+        placeholderPassword += lowerCase;
       }
       if(numericCharsSelect){
-        placeholderPassword = placeholderPassword.concat(numbers);
+        placeholderPassword += numbers;
       }
       for(var i = 0; i < length; i++){
         generatedPassword += placeholderPassword.charAt(Math.floor(Math.random()*(placeholderPassword.length)));        
@@ -44,11 +43,8 @@ function generatePassword() {
       return generatedPassword;
     } else { 
       window.alert("At least one type must be selected");
-      passwordText.value = "";
       return;
     }
-  } else {
-    passwordText.value = "";
   }
 }
 //Validation method to check if input is a number or a letter
